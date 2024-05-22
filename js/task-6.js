@@ -20,13 +20,14 @@ function createBoxes(amount) {
     return destroyBoxes();
   }
 
-  for (let i = 0; i < amount; i++) {
+  Array.from({ length: amount }).forEach(() => {
     const randomColor = getRandomHexColor();
     boxElements.push(
       `<div style="width: ${size}px; height: ${size}px; background-color: ${randomColor};"></div>`
     );
     size += 10;
-  }
+  });
+
 
   const result = boxElements.join("");
 
